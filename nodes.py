@@ -1,10 +1,10 @@
 import cv2
 import numpy as np
-from comfy.nodes import NODE_CLASS_MAPPINGS, ImageType, IntType
+from . import NODE_CLASS_MAPPINGS, ImageType, IntType  # 确保路径正确
 
 class OpenPoseDepthProcessorNode:
     CATEGORY = "Custom Nodes"
-    
+
     @classmethod
     def INPUT_TYPES(cls):
         return {
@@ -14,7 +14,7 @@ class OpenPoseDepthProcessorNode:
                 "margin": ("INT", {"default": 20, "min": 0, "max": 100}),
             }
         }
-    
+
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "process"
 
