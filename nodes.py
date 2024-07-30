@@ -34,3 +34,4 @@ class OpenPoseDepthProcessorNode:
 NODE_CLASS_MAPPINGS.update({
     "OpenPoseDepthProcessor": OpenPoseDepthProcessorNode
 })
+
