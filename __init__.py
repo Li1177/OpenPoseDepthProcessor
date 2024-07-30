@@ -1,3 +1,7 @@
-from .nodes import register
+from .nodes import OpenPoseDepthProcessorNode
 
-register()
+NODE_CLASS_MAPPINGS = {
+    "OpenPoseDepthProcessor": OpenPoseDepthProcessorNode,
+}
+
+__all__ = ["NODE_CLASS_MAPPINGS"]
