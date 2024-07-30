@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from . import NODE_CLASS_MAPPINGS, ImageType, IntType  # 确保路径正确
+from nodes import NODE_CLASS_MAPPINGS, ImageType, IntType  # 确保路径正确
 
 class OpenPoseDepthProcessorNode:
     CATEGORY = "Custom Nodes"
