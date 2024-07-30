@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from comfyui import Node, ImageType, IntType
+from nodes import Node, ImageType, IntType
 
 class OpenPoseDepthProcessorNode(Node):
     def __init__(self):
@@ -29,6 +29,5 @@ class OpenPoseDepthProcessorNode(Node):
 
         return processed_depth_img
 
-# 注册自定义Node
 def register():
     Node.register_node(OpenPoseDepthProcessorNode)
