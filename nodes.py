@@ -1,10 +1,12 @@
 import cv2
 import numpy as np
-from custom_nodes.nodes import NODE_CLASS_MAPPINGS, ImageType, IntType
+from comfy.nodes import NODE_CLASS_MAPPINGS, ImageType, IntType
 
 class OpenPoseDepthProcessorNode:
+    CATEGORY = "Custom Nodes"
+    
     @classmethod
-    def INPUT_TYPES(s):
+    def INPUT_TYPES(cls):
         return {
             "required": {
                 "openpose_image": ("IMAGE",),
@@ -12,11 +14,9 @@ class OpenPoseDepthProcessorNode:
                 "margin": ("INT", {"default": 20, "min": 0, "max": 100}),
             }
         }
-
+    
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "process"
-
-    CATEGORY = "Custom Nodes"
 
     def process(self, openpose_image, depth_image, margin):
         depth_img_resized = cv2.resize(depth_image, (openpose_image.shape[1], openpose_image.shape[0]))
